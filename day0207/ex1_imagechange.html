@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        body, body *{
+            font-size: 1.5rem;
+            font-family: 'Single Day';
+        }/*바디 안에 태그 없는 것도 적용 시키려면 body도 적어줌,,근데 그냥 별표 지우면되는거 아니낙ㅁ*/
+        #photo1{
+            width: 300px;
+            border:10px groove orange;
+        }
+        #starname{
+            margin-left: 100px;
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    가나다<!-- 태그 없이 쓴 것은 body * 스타일이 적용되지 않음. *는 바디 밑의 모든 태그를 의미-->
+
+    <h2>이미지의 속성을 변경하는 setAttribute, 속성값을 얻는 getAttribute</h2>
+    <!--속성과 스타일,,속성은 src, title같은것.. 제이쿼리는 자바스크립트를 편하게 쓸 수 있도록 만든 것.?-->
+    <!--변경하는함수, 얻는함수,, set, get-->
+    <!--onclick,, 으로 버튼에서이벤트를 줌. id는 고유 이름, 해당 버튼에 고유한 이벤트를 주기 위해 -->
+    <!--태그 안의 값을 바꾸는 innerText, innerHTML-->
+    <img src="../image/moviestar/19.jpg" id="photo1">
+    <br>
+    <b id="starname"> 수지</b>
+    <br>
+    <button type="button" id="btn1">현재값 얻기</button>
+    <button type="button" id="btn2">이미지랑 이름 변경하기</button>
+    <button type="button" id="btn3">원래대로</button>
+
+    <h2 id="msg">데이타 출력할 곳..</h2>
+    <!--onclick은 js?, 어제는 두 가지 방법으로 함. -->
+
+
+    <!--자바스크립트 이벤트들-->
+    <script>
+        var p1=document.getElementById("photo1");//p1은 요소값을 얻은 것. 사진 전체가 들어오는 것.
+        var star=document.getElementById("starname");
+        var msg=document.getElementById("msg");
+        //웬만하면 요소값을 먼저 얻은 다음 함수 하는게 나음..
+
+        //버튼1 이멘트(이벤트에는 on이 붙음.)
+        document.getElementById("btn1").onclick=function(){
+            var s=p1.getAttribute("src");
+            //p1(사진1)으로부터 그 중 src의 속성값을 얻겠다는 것.
+            var s2=star.innerText;//태그 안의 text 값을 얻는다.. 변경도 되고 얻는 것도 가능. 
+           //문자열과 변수값을 조합해서 출력하는 방법 1
+            //msg. innerText="이미지: "+s+", 이름: "+s2;
+            //방법2
+            msg.innerText=`이미지: ${s}, 이름: ${s2}`;//이 경우는 innerText가 태그 안의 text 값을 변경하는 것. 
+        }
+        //text 변겨은 innerText, 속성 변경은 setAttribute
+
+        //버튼2
+        document.getElementById("btn2").onclick=function(){
+            //p1의 속성인 src를 변겨할 것.
+            p1.setAttribute("src", "../image/moviestar/15.jpg");
+            //src를 두 번째 인자로 바꾸는 것. 두 번째값을 value값이라고 함. 
+            // get과 set의 기본 형식이 다름. 
+
+            //b태그의 요소값을 star 변수로 얻어놨다
+            //그 변수의 text 값을 변경하면 된다.
+            star.innerText="설현"; //innerText는 그냥 아이디로 써도 되지만, 다른 함수는 안돌아갈 때가 있어서얻은 다음에 하는 ㅔ 좋음. 
+            
+        }
+        //버튼 3 이벤트
+        document.getElementById("btn3").onclick=function(){
+
+            p1.setAttribute("src", "../image/moviestar/19.jpg");
+            star.innerText="수지";
+        }
+        //현재값 얻기 하면 다시 이미지 주소값과 이름을 얻을 수 있음 
+
+    </script>
+
+</body>
+</html>

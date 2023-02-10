@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+    <style>/*문서 삽입형*/
+        figure{
+            float: left;/*원래라면 사진들이세로 방향으로 나오는 걸가로방향으로 나열, 나중에 해제 시 clear:both*/
+        }
+        /*바로 아래의 하위태그를 의미, 공백: 모든 하위 태그(모든 이미지에 적용)*/
+        figure>img{
+            width: 100px;
+            height: 100px;
+            border-radius: 100px;
+        }
+        /*속성으로 직접 주는 거보다 스타일에 있는게 먼저 적용됨.*/
+        /*figure b 라고만 줄 수는 있음,, 근데 보통 정학하게 짚어줌*/
+        figure>figcaption>b{
+            font-family: '궁서체';
+            color: cadetblue;
+        }
+
+        /*제목을 가운데로 보내기*/
+      
+        /* figure>b는 적용이 안되는데, 공백으로 주면 얼마나 하위태그이든지 다 접근이 가능 */
+        figure>figcaption{
+            text-align: center;
+        }
+        /*b태그가 아닌 figcaption에 주는 이유,, 그 틀이 figcaption임//*/
+
+        h2{
+            font-family: 'Gamja Flower';
+            /*글자색과 배경색을 변경해보자*/
+            color: #2e8b57;/*16진수로 표현*/
+            /* background-color: rgb(206, 196, 196);rgb는 0~255사이의 값으로 주면됨. */
+            background-color: rgba(206, 176, 196,0.5);/*마지막 alpha값은 0~1사이의 값으로 투명도*/
+        }
+    </style>
+</head>
+<body>
+<h2>이미지 아래에 이름을 넣어보자</h2>
+<img src="../photo/1.jpg" width="130" border="1">
+<img src="../photo/2.jpg" width="130" border="1">
+<img src="../photo/3.jpg" width="130" border="1">
+
+<br>
+<b style= "margin-left: 40px;">샌드위치</b>
+<b style= "margin-left: 60px;">꼬치구이</b><!--태그삽입형-->
+<b style= "margin-left: 60px;">육개장</b>
+<hr>
+<h2>이미지와 라벨을 세트로 넣어보자</h2>
+<figure>
+    <img src="../photo/11.jpg" width="130">
+    <figcaption>
+        <b>망고빙수</b>
+    </figcaption><!--figcaption으로 세트로 만듦.-->
+</figure>
+<figure>
+    <img src="../photo/8.jpg" width="130">
+    <figcaption>
+        <b>샌드위치</b>
+    </figcaption><!--figcaption으로 세트로 만듦.-->
+</figure>
+<figure>
+    <img src="../photo/5.jpg" width="130">
+    <figcaption>
+        <b>콘치즈</b>
+    </figcaption><!--figcaption으로 세트로 만듦.-->
+</figure>
+
+</body>
+</html>

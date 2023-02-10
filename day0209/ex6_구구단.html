@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        body, body *{
+            font-size: 1.5rem;
+            font-family: 'Single Day';
+        }
+    </style>
+</head>
+<body>
+    <table border="1" style="width: 100%; border-collapse: collapse;"><!-- width를 100프로로 하면 브라우저가 넓으면 넓은 만큼 늘어남. -->
+        <caption><b style="font-size: 30px;">구구단 출력</b></caption>
+        <!--구구단 제목 부분-->
+        <tr bgcolor="lightgray">
+            <script>
+                for(var i=2;i<=9;i++)
+                {
+                    document.write(`<th>${i}단</th>`)
+                }
+            </script>
+        </tr>
+        
+        
+        <script>
+            var a="";
+            for(var i=1;i<=9;i++)
+                {   
+                    a+=`<tr align =center>`
+                    for(var j=2; j<=9;j++)
+                    {
+                        a+=`<td>${j} x ${i} =${j*i}</td>`;
+                    }
+                    a+=`</tr>`
+                }
+            document.write(a);
+        </script>
+        
+    </table>
+</body>
+</html>

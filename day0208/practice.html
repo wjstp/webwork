@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        body, body *{
+            font-size: 1.5rem;
+            font-family: 'Single Day';
+        }
+        </style>
+    <script>
+        window.onload=function(){
+
+        }
+    </script>
+</head>
+<body>
+    <img src="../image/moviestar/20.jpg" id="image" style="border:3px solid black;">
+    사람 변경하기
+    <select id="sel">
+        <option value="../image/moviestar/20.jpg" selected >유아인</option>
+        <option value="../image/moviestar/12.jpg">박보영</option>
+        <option value="../image/moviestar/14.jpg">유승호</option>
+        <option value="../image/moviestar/5.jpg">최지우</option>
+    </select>
+
+    <script>
+        var sel=document.getElementById("sel")
+        var img=document.getElementById("image")
+        sel.onchange=function(){
+            img.setAttribute("src", this.value);
+        }
+    </script>
+    테두리 변경하기(style변경)
+    <select id="sel1">
+        <option>solid blue 2px</option>
+        <option>inset yellow 2px</option>
+        <option>dotted red 2px</option>
+    </select>
+    
+    <script>
+        var sel1=getElementById("sel1");
+        var img=getElementById("image");
+        
+    </script>
+
+    
+</body>
+</html>

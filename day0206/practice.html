@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table.nt{
+            border: 4px white inset;
+            width: 600px;
+            height: 320px;
+            font-size: 20px;
+        }
+        td{
+            border-bottom: inset gray 3px;
+            border-right: inset gray 1px;
+            border-left: inset gray 1px;
+            box-shadow: 1px 1px 1px gray;
+            height: 80px; 
+        }
+    </style>
+</head>
+<body>
+    <table class="nt">
+        <tr height="50">
+            <td rowspan="3" bgcolor="skyblue" valign="top">일</td>
+            <td colspan="3" bgcolor="pink">이</td>
+        </tr>
+        <tr height="50">
+            <td colspan="2" bgcolor="pink">삼</td>
+            <td rowspan="3"bgcolor="skyblue" valign="bottom">사</td>
+        </tr>
+        <tr>
+            <td>오</td>
+            <td>육</td>
+        </tr>
+        <tr>
+            <td colspan="3" bgcolor="pink">칠</td>
+        </tr>
+
+    </table>
+</body>
+</html>

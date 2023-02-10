@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        body, body *{
+            font-size: 1.5rem;
+            font-family: 'Single Day';
+        }
+        </style>
+</head>
+<body>
+    <!--이름과 2과목의 점수를 입력한 후 결과확인 버튼을 클릭시 
+        아래 div 태그에 이름과 2과목의 점수, 그리고 총점, 평균을 구해서
+         출력하시오.-->
+    <!--조건1)자바나 HTML인 경우 포커스가 벗어날 때 
+        숫자가 아닐 경우 경고표시 후 값 지우기,
+        0~100점을 벗어날 경우 역시 경고 표시후 지우기-->
+    이름
+    <input type="text" id="irum" style="width: 100px;">
+    <br><br>
+    자바
+    <input type="text" id="jav" style="width: 100px;">
+    <br><br>
+    HTML
+    <input type="text" id="ht" style="width: 100px;">
+    <br><br>&nbsp;
+    <button type="button" id="btn">결과 확인</button>
+    <div id="result">
+    </div>
+
+    <script>
+        var irum=document.getElementById("irum");
+        var jav=document.getElementById("jav");
+        var ht=document.getElementById("ht");
+
+        jav.onblur=function(){
+            console.log(isNaN(this.value));
+            if(isNaN(this.value)||this.value>100||this.value<0)
+            {
+                alert("다시 입력해주세요");
+                this.value="";
+                this.focus();
+            }
+        }
+        ht.onblur=function(){
+            console.log(isNaN(this.value));
+            if(isNaN(this.value)||this.value>100||this.value<0)
+            {
+                alert("다시 입력해주세요");
+                this.value="";
+                this.focus();
+            }
+        }
+        
+        document.getElementById("btn").onclick=function(){
+            var n=irum.value;
+            var s=Number(jav.value)+Number(ht.value);
+            var a=s/2;
+            document.getElementById("result").innerHTML=`이름 : ${n} 총점: ${s} 평균: ${a}`
+        }
+        
+    </script>
+</body>
+</html>

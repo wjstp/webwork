@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.photo{
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+    margin-right: 5px;
+    
+}
+
+</style>
+<body>
+    <h2>shop의 이미지 1~34까지의 이미지를 table 안에 넣는데 한줄에 6개씩 츨력</h2>
+    <table border="1"  style="width: 80px; border-collapse: collapse">
+    <script>
+        for(var i=1; i<=34; i++)
+        {
+            if(i%6==1)
+                document.write(`<tr>`)
+            var a=i==24?"<td><img src='../image/shop/"+i+".gif' class='photo'></td>":"<td><img src='../image/shop/"+i+".jpg' class='photo'></td>" 
+            document.write(a);
+            if(i%6==0)
+                document.write(`</tr>`);
+        }
+        // {
+        //     var s="";
+        //     for(var i=1;i<=34;i++){
+        //         s+=
+        //         `<td align=center>
+        //             <img src='../image/shop/${i}.${i==24? "gif":"jpg"}' class='photo'>
+        //             </td>
+        //         `
+        //         if(i%6==0){
+        //             s+="<tr></tr>";
+        //         }
+        //     }
+        //     document.write(s);
+        // }
+    </script>
+    </table>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        body *{
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <table border="1" style="border-collapse: collapse;"><!--기본값이 seperate, collapse를 주면 칸 사이의 여백이 사라짐. -->
+        <caption><b>[표1]</b></caption>
+        <tr height="50" bgcolor="orange"><!--height은 보통 tr에 줌.. 헹에 적용되도록. -->
+            <!--th는 td와 달리 가운데 속성에 굵게 속성이 적용된다.-->
+            <th width="100">이름 </th>
+            <th width="170">핸드폰</th>
+            <th width="200">주소</th>
+        </tr>
+        <tr height="100" align="center"><!--tr에서 정렬할 경우 행전체에 적용..-->
+            <td bgcolor="pink">강호동</td>
+            <td bgcolor="#aaccdd">010-111-2222</td>
+            <td style="background-color: gray; color: yellow;">서울시 강남구</td>
+        </tr>
+        <tr height="100"><!--따로 너비를 안주면 그자 크기만큼 너비가 자힘. -->
+            <td valign="top">유재석</td><!--세로 방향 정렬 valign, 가로 방향 정렬align-->
+            <td valign="bottom" align="right">010-333-2222</td>
+            <td valign="top" align="right" bgcolor="yellow">서울시 영등포구</td>
+        </tr>
+        <!--네번째 줄은 세 칸을 합쳐서 이미지 넣기-->
+        <tr heigt="150"><!-- colspan 셀 합치기, 최대 나눠진개수만큼 합칠 수 있음. -->
+            <td colspan="3" align="center" bgcolor="pink">
+                <img src="../image/mainImage/K-036.png" width="200">
+            </td>
+        </tr>
+         
+    </table>
+</body>
+</html>

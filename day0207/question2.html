@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body, body *{
+            font-size: 1.5rem;
+            font-family: 'Single Day';
+        }
+        #image1{
+            position:absolute;
+            left: 200px;
+
+        }
+        div{
+            position: absolute;
+            top: 550px;
+            left: 220px;
+        }
+        </style>
+</head>
+<body>
+    <!--이미지 한장을 출력 후(속성으로 width 지정) 버튼 2개를 만든 후 
+        점점 크게 버튼을 누를 경우 사진의 속성 width를 10 크게 변경
+        점점 작게 버튼을 누를 경우 사진의 속성 width를 10 작게 변경-->
+    <!--hint: 더하기할 때  string으로 인식하지 않도록.. -->
+
+    <img src="../image/moviestar/20.jpg" width="400" id="image1">
+    <div>
+    &nbsp;
+    <button type="button" id="btn1">점점 작게</button>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button type="button" id="btn2">점점 크게</button>
+    </div>
+        
+
+    <script>
+        var p=document.getElementById("image1");
+        var w=p.getAttribute("width");
+        document.getElementById("btn1").onclick=function(){
+            p.setAttribute("width",w-Number(10));
+            w=Number(w)-Number(10);
+        }//이렇게 하면 width의 속성을 가져오는 w을 함수 밖에서 정의했기 때문에, width를 계속 바꿔줘도 w는 처음 width를 저장한 상태인 것. 
+        document.getElementById("btn2").onclick=function(){
+            p.setAttribute("width",w+Number(10));
+            w=Number(w)+Number(10);
+        }
+       
+        
+    </script>
+</body>
+</html>

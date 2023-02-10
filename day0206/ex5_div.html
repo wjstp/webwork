@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.box>div{
+            border: 1px solid gray;
+            width: 400px;
+            height: 130px;
+            margin-bottom: 10px;
+        }
+        /*반복문 안에서는 아이디 보다는 클래스가 더 적절.. 이벤트를 적용할 때문제가 발생할 수 있기 때문*/
+        #a{/*background안에서 한번에 다 줘도 됨.*/
+            /*x, y 방향으로 반복된다:기본값*/
+            background-image: url('../photo/C1.png');
+            /*반복되는 백그라운드 이미지의 사이즈 변경*/
+            background-size: 30px 30px;
+            border: 10px dotted deepskyblue;
+        }
+        #b{
+            background-image: url('../photo/11.jpg');
+            background-size: 80px 80px;
+            background-repeat: repeat-x;/*x or y방향으로만 반복..*/
+            border: 10px double green;
+        }
+
+        #c{
+            border: 10px groove gold;
+            background-image: url('../photo/C6.png');
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            opacity: 0.3;/*전체가 흐려지고 사진만 흐리게 하려면 포토샵 이용할 것.. */
+        }
+        #d{
+            border: 10px inset orangered;
+            background-image:url('../image/mainImage/K-041.png');
+            background-size: 100% 100%;
+            height: 200px;
+            color: white;
+            font-size: 30px;
+        }
+        #e{
+            border: 10px dashed rebeccapurple;
+            background: url('../image/shop/14.jpg') no-repeat right top;
+            background-size: cover;
+            /*background-size:
+            auto: 원래 배경 이미지 크기만큼만 이미지 표시
+            contain: 지정한 요소 안에 배경 이미지가 다 들어오도록 확대/ 축소
+            cover: 지정한 요소를 다 되도록 배경이미지로 확대, 축소
+            contain은 안에 포함되게끔, cover은 안이 꽉차게
+            크기 값: 100px 200px 이런식으로 지정
+            백분율: 지정한 요소를 기준으로 백분율로 지정.. 
+            */
+
+        }
+        #f{
+            border: 10px inset rosybrown;
+            background: url('../image/mainImage/K-035.png') ;
+            background-repeat: repeat-x;
+            background-size: 20% 20%;
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+     <div id="a"></div>
+     <div id="b"></div>
+     <div id="c"></div>
+     <div id="d" >안녕하세요!</div>
+     <div id="e"></div>
+     <div id="f"></div>
+    </div>
+<div class="hello">배경 이미지에 대한 공부</div>
+</body>
+</html>

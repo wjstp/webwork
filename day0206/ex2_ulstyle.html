@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        /*div 태그의 class가 title인 경우에만 적용. 태그를 붙이면 해당 태그에 있는 title에만 적용될 것. 안붙이면 그냥 모든 title*/
+        div.title{
+            font-size: 2.5em;/* em: 상위 태그의 2.5배 글자 크기,, 상위 태그가 여러개이면 글씨크기가 정리가 잘 안됨. rem: 최상위 태그의 배수로 지정할 경우(전체적으로 글자크기가 일정함.)px, pt*/
+            font-family: 'Jua';
+            text-align: center;
+            text-shadow: 3px 3px 3px gray;
+        }
+
+        div.menu{
+            text-align: center;
+        }
+        div.menu>ul{
+            list-style: none;/*li 앞에 점 없애기*/
+            /*float: left;   ul 전체가 왼쪽으로*/
+        }
+        div.menu>ul>li{
+            float: left;
+            font-family: 'Gamja Flower';
+            font-size: 24px;
+            width: 150px;
+            height: 70px;
+            line-height: 70px;/*height와 똑같은 값을 주면 정 가운데로 옴*/
+            border-radius: 20px;
+            background-color: #afeeee;
+            margin-right: 10px;
+            border: 2px solid tomato;    
+            color: #c71585;/*jqwery 검색해서 다운받아서 수정후 적용시키는 게 좋음. */
+        }
+        /*hover 마우스를 올렸을 때 스타일 적용*/
+        div.menu>ul>li:hover{
+            background-color: #2e8b57;
+            color: yellow;
+            cursor: pointer;
+            box-shadow: 5px 5px 5px gray;
+        }
+        /*active 클릭했을 때 스타일 적용*/
+        div.menu>ul>li:active{
+            background-color: black;
+            color: white;
+        }
+        img.main_photo{
+            /*위치 변경*/
+            position: absolute;
+            left: 200px;
+            top: 200px;/*left,top만 주면 적용이 안됨. 절대좌표에서 가장 왼쪽 위가 (0,0)인셈, relative는 현대 위치를 기준으로 함. 상대좌표*/
+        }
+        /*이미지 클릭시 위치 이동*/
+        img.main_photo:active{
+            /*position: absolute;이미 위에서 적용했으니 다시 적을 필요 없음*/
+            left:300px;
+            top:300px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="title"> Bitcamp Class menu</div>
+<div class="menu">
+    <ul>
+        <li>메인</li>
+        <li>오시는 길</li>
+        <li>클래스 과정들</li>
+        <li><a href="http://www.google.com" target="_new">접수</a></li>
+        
+    </ul>
+</div>
+<img src="../photo/C1.png" class="main_photo">
+</body>
+</html>
