@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #first{
+            background-color: palegoldenrod;
+        }
+    </style>
+</head>
+<body>
+
+<h2 id="arr2"></h2>
+<script>
+    var arr1=["red", "green", "blue", "gray", "orange"];
+
+    var arr2=new Array();
+    arr2.push("../image/food/2.jpg");
+    arr2.push("../image/food/5.jpg");
+    arr2.push("../image/animal/C1.png");
+    arr2.push("../image/moviestar/5.jpg");
+   
+    
+
+    for(var i=0; i<arr1.length; i++)
+    {  
+        document.write(`<h2 style="background-color:${arr1[i]}"> ${arr1[i]}</h2>`);
+
+    }
+    
+    var b=document.getElementById("arr2");
+    var y='';
+    for( var i=0; i<arr2.length;i++)
+    {
+        y+=`<img src=${arr2[i]} width="100"><br>`;
+    }
+    // for( var myphoto of arr2){
+    //     document.write(`<img src ="${arr2[i]}" width=100>`)
+    // }
+    // document. write("<hr>");
+    // for( var idx in arr2){
+    //     document.write(`<img src ="${arr2[i]}" width=100>`)
+    // }
+    
+    b.innerHTML=y;
+    //arr1을 h2 태그에 출력하되 배경색도 해당색으로출력되도록 
+    //style을 지정해서 출력하시오
+
+    //arr2 배열에있는 이미지를 출력하시오(width="100"으로 지정해서 출력하시오)
+</script>
+
+</body>
+</html>

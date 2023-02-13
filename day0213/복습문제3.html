@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--구구단 숫자르 입력 후 엔터를 누르면 해당 구구단을 div 태그에 출력하시오.
+    단, 조건1: 입력을 안하고 엔터를 누를시, "숫자를 입력해주세요" 경고
+        조건2: 숫자가 아닐 경우, "숫자로만 입력해주세요" 경고-->
+    <b> 구구단 숫자 입력: </b>
+    <input type="text" id="gugu" style="width: 100px; " onkeypress="show_alert()">
+    <div id="result">
+    </div>
+
+
+    <script>
+        var gugu= document.getElementById("gugu");
+        var result=document.getElementById("result");
+        var k;
+        function show_alert(){
+            alert("숫자를 입력해주세요.");
+            this.value="";
+            return;
+        }
+        gugu.onblur=function(){
+            if(isNaN(this.value))
+               { alert("다시 입력해주세요.");
+                this.value="";
+                return;}
+            else 
+            { 
+                var a= gugu.value;
+                for( var i=1; i<=9; i++)
+                {
+                    k+=`${a} x ${i} =${i*a} <br>`;
+                }    
+                result.innerHTML=k;
+                return;
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>

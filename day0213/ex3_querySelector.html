@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+           var stararr=document.querySelectorAll("th.star");
+
+           for(var s of stararr)
+           {
+                s.onmouseover=function(){
+                    var m=this.querySelector(".star>img");//this.querySelector("img").src 이렇게 그냥해도 됨
+                    var miniimg=m.getAttribute("src");
+                    console.log(miniimg);
+                    var n=this.querySelector(".star>b");
+                    var starname=n.innerText;
+                    document.querySelector(".bigphoto").setAttribute("src", miniimg);
+                    document.querySelector("h2").innerText=starname;
+                }
+           }
+
+
+        }
+    </script>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse; width: 500px;" >
+    <caption><b>th. star에 이벤트</b></caption>
+    <tr> 
+        <th width="100" class="star">
+            <img src="../image/moviestar/12.jpg" width="80">
+            <br>
+            <b>박보영</b>
+        </th>
+        <td align ="center" rowspan="5">
+            <img src="../image/moviestar/12.jpg" width="300" class="bigphoto">
+            <br>
+            <h2>박보영</h2>
+        </td>
+    </tr>
+    <tr> 
+        <th width="100" class="star">
+            <img src="../image/moviestar/13.jpg" width="80">
+            <br>
+            <b>박신혜</b>
+        </th>
+    <tr> 
+        <th width="100" class="star">
+            <img src="../image/moviestar/17.jpg" width="80">
+            <br>
+            <b>신민아</b>
+        </th>    
+    <tr> 
+        <th width="100" class="star">
+            <img src="../image/moviestar/18.jpg" width="80">
+            <br>
+            <b>신세경</b>
+        </th>
+    <tr> 
+        <th width="100" class="star">
+            <img src="../image/moviestar/15.jpg" width="80">
+            <br>
+            <b>설현</b>
+        </th>    
+</table>
+</body>
+</html>
+
+
+<!--https://hianna.tistory.com/712-->

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <b>구구단 숫자 입력: </b>
+    <input type="text" id="gugu" style="width: 100px; " onkeypress="show_alert()">
+    <div id="result">
+    </div>
+
+        <script>
+            document.getElementBId("gugu").onkeyup=function(e){
+                var su=e.target.value;
+                if(e.keyCode==13){// 아스키코드 엔터의 10진수 값
+                    console.log(su);
+                    if(su=="")
+                    alert("숫자를 입력해주세요");
+                    this.focus();
+                    return;
+                    }
+
+                if(isNaN(su)){
+                    alert("숫자를 입력해주세요");
+                    this.value="";
+                    this.focus();
+                    return;
+                }
+                if(su>=10||su<2){
+                    alert("2에서 9사이의 숫자를 입력해주세요!")
+                    this.value="";
+                    this.focus();
+                    return;//리턴을 하면 이 뒤로 더 이상 실행이 안됨.
+                }
+                var s=`[${su}단] <br><br>`;
+
+                for( var i=2; i<=9;i++){
+                    s+=`${su}*${i}=${su*i}<br>`;
+                }
+                document.getElementById ("result").innerHTML=s;
+                }
+            
+        </script>
+    </body>
+    </html>
+</body>
+</html>
