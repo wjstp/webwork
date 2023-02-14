@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap" rel="stylesheet">
+    <style>
+        body, body *{
+            font-family: 'Jua';
+        }
+        div.timer{
+            margin: 30px 30px;
+            font-size: 40px;
+        }
+        </style>
+        <script>
+            //브라우저가 열릴때 호출되는 함수,, 만대 onunload?
+            window.onload=function(){
+                //초기 시간 출력
+                write_timer();
+
+                //1초마다 시간 다시 출력
+                setInterval(write_timer, 1000);//function이 이미 만들어진 상태에서는 함수명만 적고 괄호도 적을 필요 없음. 
+            }
+            //사용자 함수 
+            function write_timer(){
+                let today=new Date();//기능들을 메서드로 만들어 묶어놓은 객체,, 클래스
+                let year=today.getFullYear();//괄호하는 것을 잊지말것. 현재 년도를 네 자리 숫자로 반환
+                let month=today.getMonth()+1;//0~11을 반환
+                let day=today.getDate(); //Date는 날짜, Day는 요일 숫자
+
+                let hour=today.getHours();
+                let min=today.getMinutes()>=10? today.getMinutes(): '0'+today.getMinutes();
+                let sec=today.getSeconds()>=10? today.getSeconds(): '0'+today.getSeconds();
+                document.querySelector(".timer").innerHTML=
+                `오늘은 ${year}년 ${month}월 ${day}일 입니다<br>
+                ${hour}:${min}:${sec}`;
+                //sec<10?'0'+sec:sec이렇게 바꿔도 됨.
+            }
+            //정적 함수? new를 생성하지 않고도 바로 써도됨. math.~~ 이런 식.
+        </script>
+</head>
+<body>
+    <div class="timer">00:00:00</div>
+
+</body>
+</html>

@@ -29,7 +29,7 @@
         <div class="two" >
             <h4 class="g1">Have a nice day!!!</h4>
             <div class="three i1">
-                <img src="../image/food/11.jpg" width="100" >
+                <img src="../im age/food/11.jpg" width="100" >
         
             </div>
         </div>
@@ -41,8 +41,8 @@
         
         //마우스를 벗어나면 다시 추가한 스타일을 제거한다
         document.querySelector(".one>img").onmouseover=function(){
-            this.nextElementSibling.firstElementChild.setAttribute("class", "geulstyle");
-            this.nextElementSibling.lastElementChild.setAttribute("class", "three image");
+            this.nextElementSibling.firstElementChild.setAttribute("class", "geulstyle");//queryselector로 하위태그를 찾아도 됨
+            this.nextElementSibling.lastElementChild.setAttribute("class", "three image");//style.border로 해도 됨
         }
         document.querySelector(".one>img").onmouseout=function(){
             this.nextElementSibling.firstElementChild.setAttribute("class", "g1");
