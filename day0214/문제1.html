@@ -19,7 +19,8 @@
             width: 200px;
             height: 100px;
             border: 1px black solid;
-            padding: 120px 100px;
+            line-height: 100px;
+            text-align:center;
         }
     </style>
     <script>
@@ -33,6 +34,8 @@
             document.querySelector("#border").onclick=function(){
                 if(this.checked)
                     document.querySelector("#box").style.border="10px gold inset";
+                    //ELSE의 경우 다시 원래 상태로 돌아온다고 해야 체크박스 해제 시 테두리 없어짐
+                else document.querySelector("#box").style.border="1px black solid";
             }
             var a= document.querySelectorAll(".size");
             for(let i=0;i<a.length;i++){
@@ -50,7 +53,7 @@
                 let v=this.value;
                 document.querySelector("#box").style.backgroundColor=v;
             }
-            let ff=document.querySelectorAll(".font");
+            let ff=document.querySelectorAll(".font");//getElementByName으로도 배열값을 얻을 수 있음. let ff=document.getElementByName("font")
             for(let i=0; i<ff.length;i++)
             {
                 ff[i].onclick=function(){
@@ -62,7 +65,8 @@
 </head>
 <body>
     <h4>입력후 엔터를 누르세요 : </h4>
-    <input type="text" id="txt" value="안녕하세요">
+    <input type="text" id="txt" placeholder="입력 후 엔터"><!--placeholder 실제값 아니고 입력하면 사라지는값-->
+    <!--value="안녕하세요"-->
     &nbsp;&nbsp;<label><input type="checkbox" id ="border">테두리 </label>
     <br>
     <h4>글자크기 : </h4>
