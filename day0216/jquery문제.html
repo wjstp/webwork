@@ -22,7 +22,7 @@
             "font-family":"Jua"
         })
         //3.section중 class가 one 인 요소 중 두번째 요소의 img의 src 변경
-        $(".one").eq(1).attr("src", "../image/jquery_image/02.png");
+        $("section.one img").eq(1).attr("src", "../image/jquery_image/02.png");
         //4. 전체 img 중 첫번째 img의 src를 얻어서 아이디가 photo인 이미지의
         //src에다 넣어주세요
         var a=$("img").eq(0).attr("src");
@@ -41,6 +41,7 @@
                 "color":"red"
             })
         })
+        //ul li ,, this.css("color", "red").css("width", "130px");
         $("li").mouseout(function(){
             $(this).css({
                 "color":"blue"
