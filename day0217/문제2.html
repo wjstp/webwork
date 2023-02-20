@@ -86,7 +86,8 @@
                 document.write("<tr class='tr'>");
                 for (var j = 0; j < 5; j++) {
                     let n = nums[j + 5 * i];
-
+                    //밖에다가 idx 값을 0으로 두고, 안에서 출력될 때마다 플러스 일
+                    //되는식으로 핻 됨 .
                     let r = parseInt(Math.random() * 256) + 1;
                     let g = parseInt(Math.random() * 256) + 1;
                     let b = parseInt(Math.random() * 256) + 1;
@@ -101,6 +102,7 @@
 
             //td에 마우스 올리면 h1에 값 출력, 배경색 적용
             $(".td").mouseover(function () {
+                //let color=$(this).css("color")이렇게 속성값 가져와도 됨. 
                 let r= $(this).attr("r");
                 let g= $(this).attr("g");
                 let b= $(this).attr("b");

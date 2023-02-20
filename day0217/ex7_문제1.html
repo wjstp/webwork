@@ -73,12 +73,23 @@
         $("div.one").find("div.bit").find("h2").mouseover(function(){
             let color= $(this).next().attr("color");
             $("div.two").css("background-color", color);
-            
+
             let photo=$(this).parent().parent().find("img").attr("src");
+            //$(this).parent().siblings("img") 이렇게도 할 수 있음.
             $("div.two").find("img").attr("src",photo);
 
             let memo=$(this).next().text();
-            $("div.two").find("h3").text(memo);
+            $("div.two").find("h2").text(memo);
+
+            let memo2=$(this).parent().parent().find("h3").text();
+            //$(this).parent().siblings("h3") 이렇게 찾아도 됨. 
+            $("div.two").find("h3").text(memo2);
+        })
+        $("div.one h2").hover(function(){
+            let color=$(this).next().attr("color");
+            $(this).css("background-color", color)
+        }, function(){
+            $(this).css("background-color", "#fff")
         })
         //마우스 위치 위의 사진을 우측 사진에 나오게 하고
         //아래의 h4,위의 h3 값을 얻어서 우측태그에 넣기
