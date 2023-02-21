@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap"
+        rel="stylesheet">
+    <style>
+        body,
+        body * {
+            font-family: 'Single Day';
+        }
+    </style>
+</head>
+
+<body>
+    <h5 class="alert alert-success">폼태그 문제 #1</h5>
+    <form>
+        <table class="table table-bordered" style="width: 400px;">
+            <tr>
+                <th width="100" bgcolor="#ccc">이름</th>
+                <td>
+                    <input type="text" id="txtname" class="form-control" placeholder="이름입력" autofocus required>
+                </td>
+
+            </tr>
+            <tr>
+                <th width="100" bgcolor="#ccc">비밀번호</th>
+                <td>
+                    <input type="password" id="txtpass" class="form-control" placeholder="숫자 4자리" required
+                        pattern="[0-9]{4}"><!--0부터 9까지의 숫자만 가능, 길이는 네 글자-->
+                </td>
+            </tr>
+            <tr>
+                <th width="100" bgcolor="#ccc">3과목 점수</th>
+                <td>
+                    <div class="input-group"><!--입력안햇을때 경고 required 범위지정 pattern-->
+                        <input type="text" id="score1" class="form-control" style="width: 80px;" pattern="[0-9]{1,3}"
+                            required><!--1부터 100-->
+                        <input type="text" id="score2" class="form-control" style="width: 80px;" pattern="[0-9]{1,3}"
+                            required>
+                        <input type="text" id="score3" class="form-control" style="width: 80px;" pattern="[0-9]{1,3}"
+                            required>
+                        <!--0부터 9까지의 숫자만 가능, 길이는 네 글자-->
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <th width="100" bgcolor="#ccc">글자색</th>
+                <td>
+                    <label><input type="radio" name="tcolor" value="red" class="form-chekc-input"> 빨강
+                    </label>
+                    <label><input type="radio" name="tcolor" value="blue" class="form-chekc-input"> 파랑
+                    </label>
+                    <label><input type="radio" name="tcolor" value="green" class="form-chekc-input"> 초록
+                    </label>
+                    <label><input type="radio" name="tcolor" value="black" class="form-chekc-input"> 검정
+                    </label>
+
+                </td>
+            </tr>
+            <tr>
+                <th width="100" bgcolor="#ccc">신입/복학</th>
+                <td>
+                    <label>
+                        <input type="checkbox" id="chk" class="form-check-input">복학생
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="submit" class="btn btn-outline-success" style="width: 130px;">결과 확인</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br><br>
+    <div class="result" style="font-size: 20px; width: 400px; border: 1px solid gray;">결과</div>
+
+    <script>
+        //버튼 클릭시 결과 출력
+        //조건1: 비밀번호가 1234가 아닐 경우, 
+        //"비밀번호가 맞지 않습니다"출력 후 함수 종료
+        //조건2: 이름과 3과목의 점수, 총점, 평균까지 출력하고 
+        //점수가 1~100을 벗어난게 있으면 경고 후 종료
+        //복학생에 체크할 경우, [복학생입니다] 체크 안할 경우 [신입생입니다]
+        //조건4: 선택한 색상으로 출력 글자색 지정하기
+        $("form").submit(function(e){//버튼으로 주면 패턴, 이런것들 인식 못함
+            e.preventDefault();
+            let s="";
+            if($("#txtpass").val()!='1234')
+            {
+                alert("비밀번호가 맞지 않습니다.");
+                
+                return;
+            }
+            let score=new Array();
+            score.push($("#score1").val());
+            score.push($("#score2").val());
+            score.push($("#score3").val());
+            let sum=0; let av=0;
+            $.each(score, function(idx, item){
+                if(item>100||item<0){
+                    alert("점수가 정확하지 않습니다.");
+                    $("#score1").val("");
+                    $("#score2").val("");
+                    $("#score3").val("");
+                    return;
+                }
+                else{
+                    sum+=Number(item);
+                }
+            })
+            s+= `각 점수는 ${score[0]}, ${score[1]}, ${score[2]}이며,<br> 총점은 ${sum} 이고, 평균은 ${(sum/3).toFixed(1)}입니다.<br>`
+            
+            
+            
+            
+            if($("#chk").prop("checked"))
+            {
+                s+="[복학생입니다]"
+            }
+            else {s+="[신입생입니다]"}
+
+
+            $(".result").html("이름은 "+$("#txtname").val()+"이고, "+s).css("color", $("input[name='tcolor']:checked").val()
+            );
+        })
+    </script>
+</body>
+
+</html>
