@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,53 +16,125 @@
         body * {
             font-family: 'Single Day';
         }
-        #result{
-            border: 1px black solid;
+
+        table.tb {
+            font-size: 23px;
+            caption-side: top;
+            position: absolute;
+            left: 50px;
+
+        }
+
+        caption {
+            color: black;
+            text-align: center;
+        }
+
+        tr {
+            border-bottom: 1px solid lightgray;
+            border-top: 1px solid lightgray;
+        }
+
+        td {
+            height: 60px;
+            width: 100px;
+        }
+
+        #result {
+            border: 1px gray solid;
             width: 400px;
-            height: 100px;
+            height: 200px;
+            position: absolute;
+            top: 310px;
+            left: 50px;
+            text-align: center;
+            line-height: 200px;
+            font-size: 20px;
+
         }
     </style>
-</head>
-<body>
-    
-    <div><b>글꼴 모양</b></div><br>
-    <input type="checkbox" name="ss" value="bold" class="form-check-input">굵게
-    <input type="checkbox" name="ss" value="italic" class="form-check-input">이태릭
-    <input type="checkbox" name="ss" value="underline" class="form-check-input">밑줄
-    <br><br>
-    <input type="radio" name="ff" value="Jua" class="form-check-input">Jua
-    <input type="radio" name="ff" value="Gamja Flower" class="form-check-input">Gamja
-    <input type="radio" name="ff" value="Nanum Pen Script" class="form-check-input">Nanum
-    <input type="radio" name="ff" value="Single Day" class="form-check-input">Single
-    <br><br>
-    <input type="radio" name="si" value="20px" class="form-check-input">20px
-    <input type="radio" name="si" value="30px" class="form-check-input">30px
-    <input type="radio" name="si" value="35px" class="form-check-input">35px
-    <input type="radio" name="si" value="40px" class="form-check-input">40px
-    <br><br><br>
-    메시지 <input type="text" class="form-control" width="100" id="tt">
-    <br><br>
-    <div id="result"></div>
-    
-    <script>
-      $("#tt").keyup(function(e){
-        if(e.keyCode ==13 ){
-            let s=$("#tt").val();
-            $("#result").text(s);
-        }});
-        
-        $("input[name='ss']:checked").change(function(){
-            $(this).each(function(idx, item){
-                $("#result").css("text-decoration", item.val());
-            })
-        })
-            
-        // $("#result").css("font-family",$("input[name='ff']:checked").val());
 
-        // $("#result").css("font-size", $("input[name='si']:checked").val());
-    
+</head>
+
+<body>
+
+    <table class="tb">
+        <caption>글꼴 모양</caption>
+        <tr>
+            <td><label><input type="checkbox" id="bold" value="bold" class="form-check-input">굵게</label></td>
+            <!--font-weight, font-style, font-decoration-->
+            <td><label><input type="checkbox" id="italic" value="italic" class="form-check-input">기울게</label></td>
+            <td><label><input type="checkbox" id="line" value="underline" class="form-check-input">밑줄</label></td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="fontfamily" value="Jua" clas="form-check-input">Jua</td>
+            <td><input type="radio" name="fontfamily" value="Gamja Flower" clas="form-check-input">Gamja</td>
+            <td><input type="radio" name="fontfamily" value="Nanum Pen Script" clas="form-check-input">Nanum</td>
+            <td><input type="radio" name="fontfamily" value="Single Day" clas="form-check-input">Single</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="size" value="20px" class="form-check-input">20px</td>
+            <td><input type="radio" name="size" value="30px" class="form-check-input">30px</td>
+            <td><input type="radio" name="size" value="35px" class="form-check-input">35px</td>
+            <td><input type="radio" name="size" value="40px" class="form-check-input">40px</td>
+        </tr>
+        <tr>
+            <td>메시지</td>
+            <td colpan="3"><input type="text" class="form-control" id="message"></td>
+        </tr>
+
+    </table>
+    <div id="result"></div>
+    <script>
+        let s = "";
         
-    
+        $("#message").keyup(function(e){
+            //엔터누르면 적용
+            $("#message").keyup(function (e) {
+            if (e.keyCode == 13) {
+                s = $(this).val();
+                $("#result").text(s);
+            }
+        })
+            //입력시 바로 적용
+            $("#result").html($(this).val());
+        })
+
+        $("#bold").change(function () {
+            if ($(this).is(":checked")) {
+                $("#result").css("font-weight", $("#bold").val());
+            }
+            else { $("#result").css("font-weight", "normal") };
+        });
+        $("#italic").change(function () {
+            if ($(this).is(":checked")) {
+                $("#result").css("font-style", $("#italic").val());
+            }
+            else { $("#result").css("font-style", "normal") };
+        });
+        $("#line").change(function () {
+            if ($(this).is(":checked")) {
+                $("#result").css("text-decoration", $("#line").val());
+            }
+            else { $("#result").css("text-decoration", "none") };
+        });
+
+        $("input[name='fontfamily']").change(function () {
+            let f = $("input[name='fontfamily']:checked").val();
+            $("#result").css("font-family", f);
+        })
+        $("input[name='size']").change(function () {
+            let f2 = $("input[name='size']:checked").val();
+            $("#result").css("font-size", f2);
+        })
+
+
+
+
+
+
+
     </script>
 </body>
+
 </html>

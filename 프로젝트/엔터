@@ -1,0 +1,11 @@
+$("#message").keyup(function(e){
+            //엔터누르면 적용
+            $("#message").keyup(function (e) {
+            if (e.keyCode == 13) {
+                s = $(this).val();
+                $("#result").text(s);
+            }
+        })
+            //입력시 바로 적용
+            $("#result").html($(this).val());
+        })

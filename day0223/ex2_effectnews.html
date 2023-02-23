@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Jua&family=Lobster&family=Nanum+Pen+Script&family=Single+Day&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body,
+        body * {
+            font-family: 'Single Day';
+        }
+    </style>
+    <script>
+        $(function(){
+            $(".title>b").css({
+                //제목의 기사 크기
+                "cursor":"pointer",
+                "font-size":"20px"
+            });
+            //내용은 일단 안보이게 처리
+            $("div.content").hide();
+            //제목을 클릭하면 그 아래의 기사내용이 나오도록 하는데
+            //effect 효과를 적용해보자
+            $(".title>b").click(function(){
+                $(this).next().slideDown('slow');
+
+                //현재 기사를 제외하고는 사라지게 한다
+                $(this).parent().siblings().find("div.content").slideUp();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="title alert alert-danger">
+        <b>[속보] “경기둔화 우려 커져” 한은 기준금리 동결...年3.50%</b>
+        <div class="content">
+            <pre>
+ 한국은행 금융통화위원회(금통위)는 23일 오전 서울 중구 한은 삼성본관에서 전체회의를 열고 기준금리를
+현 수준인 연 3.50%로 유지해 통화정책을 운용하기로 했다.
+
+한은이 기준금리를 동결한 것은 지난해 2월 이후 1년 만이다. 통화정책 결정을 위한 금통위 개최 횟수 
+기준으로는 8회 만이다.
+                
+한은은 지난해 4월과 5월, 7월(빅스텝), 8월, 10월(빅스텝), 11월 이어 올해 1월까지 사상 처음으로 7회 연속
+기준금리를 인상한 바 있다.                
+            </pre>
+        </div>
+    </div>
+    <div class="title alert alert-info">
+        <b>국정원·경찰, 금속노조 경남지부 사무실 압수수색</b>
+        <div class="content">
+            <pre>
+국가정보원과 경찰이 23일 경남 창원의 민주노총 경남지역본부 2층 금속노조 경남지부 사무실에 대한 
+압수수색에 들어갔다.
+
+민주노총과 경찰 등에 따르면 이날 오전 8시30분께 국정원과 경찰 등 100여명이 창원시 성산구 민주노총 
+경남지부 건물에 몰려와 압수수색을 진행 중이다.
+
+이날 국정원과 경찰의 압수수색 과정에서 민주노총 경남본부 일부 조합원들이 항의하는 등 실랑이가
+벌어지기도 했다.
+
+현재 민주노총 측 변호인이 압수수색 영장 사유를 확인하고 있다. 지난 11월 창원간첩단 사건과 연관된 
+것으로 알려졌다.
+
+공안당국은 이날 오전 대우조선 하청노조를 대상으로도 압수수색에 벌이고 있다.
+            </pre>
+        </div>
+    </div>
+    <div class="title alert alert-success">
+        <b>“내가 만든 산삼약 먹으면 완치”...말기암 환자에 수억 받아낸 한의사
+        </b>
+        <div class="content">
+            <pre>
+23일 법조계에 따르면 서울중앙지법 형사항소5-1부(재판장 최병률)는 최근 사기 혐의로 기소된 
+한의사 A씨에게 1심과 같이 징역 2년을 선고했다.
+
+A씨는 2017년 2월 자신에게 연락해온 한 말기 암 환자의 배우자에게 “내가 개발한 산삼 약을
+ 3개월가량 먹으면 암을 완치할 수 있다”며 치료를 권유했다.
+
+그는 치료비로 3억6000만원을 요구하며 치료가 실패할 경우 전액 환불해주겠다고 약속했다.
+
+환자 측이 비용 문제로 치료를 망설이자 A씨는 지인까지 동원해 “A씨의 산삼 약을 먹은 후 
+머리에 종양이 없어졌다”고 거짓말하게 했다. 이 지인은 치료가 실패했을 때 A씨가 반환할 금액을
+본인이 보증하겠다고까지 했다.
+            </pre>
+        </div>
+    </div>
+</body>
+
+</html>
