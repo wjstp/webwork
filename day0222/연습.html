@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+  
+</head>
+<body>
+    <script>
+        let hi="hi, hello, bonjour, 안녕";
+        let hiarr=hi.split(", ");
+        console.log(hiarr[2]);
+        let animal="saja, ori, penguin";
+        let anarr=animal.split(",");
+        console.log(anarr[2]);
+
+        for(var a of anarr)
+        {
+            document.write(a);
+        }
+        for(var a in hiarr)
+        {
+            document.write(hiarr[a]);
+        } 
+        let maindata=[{"part":"animal",data:["../image/animal/C1.png","../image/animal/C6.png","../image/animal/C8.png"]},
+        {"part":"food",data:["../image/food/1.jpg","../image/food/3.jpg","../image/food/11.jpg","../image/food/12.jpg" ]},
+        {"part":"shop",data:["../image/shop/14.jpg","../image/shop/30.jpg"]}
+        ];
+        
+        
+       $.each(maindata, function(idx, item){
+        document.write(item);
+        $.each(item.data, function(i, it)
+        {
+            document.write(it);
+        })
+       })
+    </script>
+</body>
+</html>

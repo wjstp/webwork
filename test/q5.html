@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+</head>
+<body>
+    <input type="text" id="s1">
+    <input type="text" id="s2">
+    <input type="text" id="s3">
+    <button type="button" id="btn">점수 계산</button>
+    <div id="result"></div>
+    <script>
+        $("#btn").click(function(){
+            let sum=$("#s1").val()+$("#s2").val()+$("#s3").val();
+            let av=sum/3;
+            $("#result").html(`점수 합계 : ${sum}<br> 점수 평균: ${av}`)
+        })
+    </script>
+</body>
+</html>
